@@ -1,0 +1,148 @@
+/* dev: Francesco Cimino; */
+/* proj: Vue Slider; */
+/* lang: css; */
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* body */
+body{
+    background-color: grey;
+}
+
+
+
+/* container */
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* items-formatting-section */
+/* items */
+.item {
+    float: left;
+    width: 700px;
+    height: 333px;
+    position: relative;
+}
+
+/* img */
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition-duration: 1s;
+}
+
+.item:hover img{
+    border-radius: 50px;
+}
+
+/* text */
+.item .text {
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+    text-align: right;
+    color: white;
+}
+
+
+
+/* thumb-formatting-section */
+/* thumbs */
+.thumbs {
+    float: left;
+    height: 333px;
+    background: #000;
+    position: relative;
+}
+
+/* thumb */
+.thumb {
+    height: calc((333px) / 5);
+    opacity: 0.5;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+
+.thumb:hover{
+    transform: scale(.8);
+}
+
+/* img */
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition-duration: 1s;
+}
+
+/* active */
+.thumb.active {
+    border: 2px solid white;
+    opacity: 1;
+}
+
+
+
+/* previous & next elements*/
+.prev, .next {
+    width: 20px;
+    height: 20px;
+    margin: 10px 0;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+    z-index: 333;
+}
+
+/* next */
+.next {
+    bottom: 0;
+}
+
+
+
+/* pseudo-elements */
+.prev::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%) rotate(-45deg);
+}
+
+
+.next::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    display: block;
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+    transform: translate(-50%) rotate(135deg);
+}
+

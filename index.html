@@ -34,6 +34,8 @@
         <div class="container" >
             <div class="slider-class" tabindex="0">
 
+                <h1>Francesco Cimino</h1>
+
                 <!-- mouse-hover-operation -->
                 <div @mouseover="mouseOn()" @mouseleave="mouseOff()" class="item">
                     <img :src="imgsArray[sliderPosition].img" alt="places images" />
@@ -45,6 +47,19 @@
 
                 </div>
                 <!-- /mouse-hover-operation -->
+
+                <!-- thumbs-section -->
+                <div class="thumbs">
+                    
+                    <div @click="arrowUp" class="prev"></div>
+                    <div @click="arrowDown" class="next"></div>
+
+                    <div v-for="(item, index) in imgsArray" class="thumb" :class="sliderPosition === index ? 'active' : ''" @click="onThumbsClick(index)">
+                        <img :src="item.img" alt="places images"/>
+                    </div>
+                    
+                </div>
+                <!-- /thumbs-section -->
 
             </div>
         </div>

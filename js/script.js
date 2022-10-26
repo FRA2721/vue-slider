@@ -50,6 +50,51 @@ createApp({
         }
     }, 
 
+    // thumbs-section
+    methods: {
+
+        // slider-arrow-event
+        arrowUp() {
+            if(this.sliderPosition > 0)
+            this.sliderPosition--;
+
+            else {
+                this.sliderPosition = 4;
+            }
+        },
+
+        arrowDown() {
+            if(this.sliderPosition < this.imgsArray.length - 1) {
+                this.sliderPosition++;
+
+            } else {
+                this.sliderPosition = 0;
+            }
+        },
+
+        onThumbsClick(clickedIndex) {
+            this.sliderPosition = clickedIndex;
+        },
+
+        // mouse-hover-section
+        mouseOn() {
+            clearInterval(this.autoScroll);
+        },
+
+        mouseOff() {
+            this.autoScroll = setInterval(() => {
+
+                if(this.sliderPosition < this.imgsArray.length - 1) {
+                    this.sliderPosition++;;
+
+                } else {
+                    this.sliderPosition = 0;
+                }
+    
+            }, 1500); 
+        }
+    },
+
     // autoscroll-section
     created: function() {
 
