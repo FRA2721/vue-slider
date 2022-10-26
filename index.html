@@ -27,6 +27,32 @@
 
 <body>
 
+    <!-- #root -->
+    <div id="root">
+
+        <!-- container -->
+        <div class="container" >
+            <div class="slider-class" tabindex="0">
+
+                <!-- mouse-hover-operation -->
+                <div @mouseover="mouseOn()" @mouseleave="mouseOff()" class="item">
+                    <img :src="imgsArray[sliderPosition].img" alt="places images" />
+
+                    <div class="text">
+                        <h3>{{ imgsArray[sliderPosition].title }}</h3>
+                        <p>{{ imgsArray[sliderPosition].text }}</p>
+                    </div>
+
+                </div>
+                <!-- /mouse-hover-operation -->
+
+            </div>
+        </div>
+        <!-- /container -->
+
+    </div>
+    <!-- /#root -->
+
     <!-- js -->
     <script src="js/script.js"></script>
     <!-- /js -->
